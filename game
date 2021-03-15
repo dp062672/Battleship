@@ -1,0 +1,87 @@
+print("**********Battleship**********")
+
+grid1 = [
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+    ["*", "*", "*", "*", "*", "*", "*", "*", "*", "*"],
+]
+
+for x in range(9):
+    print(*grid1[x])
+
+class carrier:
+    def __init__(self, name, length, pv, sv):
+        self.name = name
+        name = "carrier"
+        self.length = length
+        length = 5
+        self.sv = sv
+        sv = "C"
+    def length(length):
+        length = 5
+
+    def sv(sv):
+        sv = sv
+    def name(name):
+        name = "Carrier"
+    def place(length, name, sv):
+        placed = False
+        while placed == False:
+            print("please place your", name)
+            cppoint = int(input("pick your column, 0-9 >> "))
+            rppoint = int(input("pick your row, 0-9 >> "))
+            if 0 <= cppoint <= 9 and 0 <= rppoint <= 9 :
+                grid1[cppoint][rppoint] = "C"
+                ori = input("pick your orientation, up, down, left, or right (please type in all caps)")
+                if ori == "UP":
+                    for x in range(length):
+                        if grid1[rppoint - x][cppoint] == "x":
+                            grid1[rppoint - x][cppoint] = sv
+
+                if ori == "DOWN":
+                    for x in range(length):
+                        if grid1[rppoint + x][cppoint] == "x":
+                            grid1[rppoint + x][cppoint] = sv
+
+                if ori == "LEFT":
+                    for x in range(length):
+                        if grid1[rppoint][cppoint - x] == "x":
+                            grid1[rppoint][cppoint - x] = sv
+
+                if ori == "RIGHT":
+                    for x in range(length):
+                        if grid1[rppoint][cppoint + x] == "*":
+                            grid1[rppoint][cppoint + x] = sv
+            for x in range(9):
+                print(*grid1[x])
+            placed = True
+
+                                
+                        
+                        
+                        
+
+A = grid1[0]
+B = grid1[1]
+C = grid1[2]
+D = grid1[3]
+E = grid1[4]
+F = grid1[5]
+G = grid1[6]
+H = grid1[7]
+I = grid1[8]
+J = grid1[9]
+
+
+
+place = True
+while place == True:
+    carrier.place(5, "carrier", "C")
+
